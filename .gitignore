@@ -8,7 +8,8 @@
 
 # production
 /build
-/src/path.js
+
+src/path.js
 # misc
 .DS_Store
 .env.local
