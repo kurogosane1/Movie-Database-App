@@ -1,3 +1,19 @@
+# Welcome to the Movie Database
+
+A simple movie database with the potential to go beyond what its showing right now. 
+The app was made using ReactJS. The moviedb website database API was used. 
+
+### Things to first acheive
+For this API to work you would require to create a path.js file. Inside the file you can export the API key.
+Once you've acheived the API key from there website, you can paste it into your file. the moviedb website api documentations would provide you the list and ways to get your data that your looking for. 
+
+I would suggest taking your time and reviewing there website. 
+
+Once you've acheived those, then simply type  `npm run` in your terminal and the page shall load. 
+
+More instructions on using the `create-react-app` CLI can be found below.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

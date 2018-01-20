@@ -5,6 +5,7 @@ import './App.css';
 import Movie from './movie';
 import { Poster } from './movie';
 import Overdrive from 'react-overdrive';
+import path from './path';
 
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
@@ -16,7 +17,7 @@ class MovieDetail extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=e737851cdf293728dce4a284c5cc83e8&language=en-US`);
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=${path.key}`);
       const movie = await res.json();
       //eslint-disable-line
       this.setState({

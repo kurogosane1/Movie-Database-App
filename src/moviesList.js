@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import './App.css';
 import Movie from './movie';
+import path from './path';
 
 
 class MoviesList extends PureComponent {
@@ -12,7 +13,7 @@ class MoviesList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=e737851cdf293728dce4a284c5cc83e8&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
+      const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${path.key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`);
       const movies = await res.json();
       //eslint-disable-line
       this.setState({
@@ -26,7 +27,7 @@ class MoviesList extends PureComponent {
   render() {
     return (
       <MovieGrid>
-          {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
+        {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
       </MovieGrid>
     );
   }
