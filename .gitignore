@@ -9,8 +9,8 @@
 # production
 /build
 
-!/src/*
-/src/path.js
+
+src/path.js
 
 
 # misc
