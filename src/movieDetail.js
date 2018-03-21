@@ -1,9 +1,13 @@
 /* eslint react/no-did-mount-set-state: 0 */
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import styled from 'styled-components';
 import './App.css';
 import Movie from './movie';
-import { Poster } from './movie';
+import {
+  Poster
+} from './movie';
 import Overdrive from 'react-overdrive';
 import path from './path';
 
@@ -29,13 +33,15 @@ class MovieDetail extends Component {
   }
 
   render() {
-    const { movie } = this.state;
-    return (
-      <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`} alt={movie.title}>
+    const {
+      movie
+    } = this.state;
+    return ( 
+      <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
         <MovieInfo>
-          <Overdrive id={movie.id}>
-          <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
-        </Overdrive>
+          <Overdrive id={`${movie.id}`}>
+            <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+          </Overdrive>
           <div>
             <h1>{movie.title}</h1>
             <h3>{movie.release_date}</h3>
@@ -49,7 +55,7 @@ class MovieDetail extends Component {
 
 export default MovieDetail;
 
-const MovieWrapper = styled.div`
+const MovieWrapper = styled.div `
     position: relative;
     padding-top: 50vh;
     background: url(${props => props.backdrop}) no-repeat;
@@ -57,7 +63,7 @@ const MovieWrapper = styled.div`
 `;
 
 
-const MovieInfo = styled.div`
+const MovieInfo = styled.div `
     background: white;
     text-align: left;
     padding: 2rems 10%;
