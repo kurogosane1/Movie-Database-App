@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-app.use(express.static(process.cwd() + "/build"));
+app.use(express.static(path.resolve(__dirname, 'build')));
 app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '/build/index.html'))
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 })
 
 
