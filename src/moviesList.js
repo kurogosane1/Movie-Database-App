@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import './App.css';
 import Movie from './movie';
-import path from 'path';
+import path from '/path';
 
 
 class MoviesList extends PureComponent {
