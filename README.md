@@ -12,6 +12,8 @@ This app requirements are NodeJS and most importantly its made from `create-reac
 #### App
 To start the app simply run the code `npm start`
 that should begin the app. 
+But you also you require to obtain the API key from OMDB Api database
+You can find it [here](http://www.omdbapi.com/)
 
 
 
