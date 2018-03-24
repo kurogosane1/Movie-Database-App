@@ -1,8 +1,8 @@
 /* eslint react/no-did-mount-set-state: 0 */
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import '/App.css';
-import Movie from '/movie';
+import './App.css';
+import Movie from './movie';
 import path from './path';
 
 

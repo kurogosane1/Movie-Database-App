@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import '/App.css';
-import Movie from '/movie';
-import {
-  Poster
-} from '/movie';
+import './App.css';
+import Movie from './movie';
+import {Poster} from './movie';
 import Overdrive from 'react-overdrive';
-import path from '/path';
+import path from './path';
 
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
