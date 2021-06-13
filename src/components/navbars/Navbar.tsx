@@ -1,7 +1,6 @@
 import React from "react";
 import NetflixTitle from "../../assets/icons/NetflixTitle";
-import { Navbar, NavbarList } from "../../styles/Navbar";
-import { UserIcon } from "../../styles/buttons";
+import { Navbar, NavbarList, UserIcon } from "../../styles/";
 
 function Nav() {
   return (
