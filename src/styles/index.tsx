@@ -30,11 +30,15 @@ export const UserIcon = styled.div`
 
 export const Rows = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 20px;
-  overflow-x: hidden;
+  /* align-items: center; */
+  /* justify-content: flex-start; */
   padding: 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Columns = styled.div`
@@ -45,6 +49,7 @@ export const Columns = styled.div`
   justify-content: space-evenly;
   background-color: red;
   overflow-x: hidden;
+  overflow-y: none;
   margin-left: 20px;
 `;
 
@@ -71,9 +76,32 @@ export const MoviePoster = styled.div`
   width: 200px;
 `;
 
-export const MovieImage = styled.img.attrs<{ where: string }>({
-  src: `${(props) => props.where || Imagess}`,
+export const MovieImage = styled.img.attrs<{ src: string; isLarge?: boolean }>({
+  src: `${(props) => props.src || Imagess}`,
 })`
-  height: 300px;
-  width: 200px;
+  width: 100%;
+  margin-right: 15px;
+  object-fit: contain;
+  max-height: ${(props)=>props.isLarge? "300px":"400px"};
+  transition: transform 450ms;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.08);
+    z-index: 10;
+  }
+`;
+
+export const MovieMain = styled.img.attrs<{ src: string }>({
+  src: `${(props) => props.src || Imagess}`,
+})`
+  width: 100%;
+  margin-right: 15px;
+  object-fit: contain;
+  max-height: 600px;
+  transition: transform 450ms;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.08);
+    z-index: 10;
+  }
 `;
