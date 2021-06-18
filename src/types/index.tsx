@@ -5,6 +5,10 @@ export interface Header {
   isLarge?: boolean;
 }
 
+export interface BannerInt {
+  fetchURL: string;
+};
+
 export interface MoviesData {
   Movie: {
     adult?: boolean;

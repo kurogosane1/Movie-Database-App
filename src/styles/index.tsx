@@ -55,7 +55,7 @@ export const Columns = styled.div`
 
 export const Navbar = styled.div`
   display: flex;
-  background-color: green;
+  background-color: transparent;
   align-items: center;
   justify-content: space-between;
   height: 50px;
@@ -63,6 +63,7 @@ export const Navbar = styled.div`
   padding: 20px;
   margin-left: 20px;
   margin-right: 20px;
+  z-index: 10;
 `;
 
 export const NavbarList = styled.div`
@@ -82,7 +83,7 @@ export const MovieImage = styled.img.attrs<{ src: string; isLarge?: boolean }>({
   width: 100%;
   margin-right: 15px;
   object-fit: contain;
-  max-height: ${(props)=>props.isLarge? "300px":"400px"};
+  max-height: ${(props) => (props.isLarge ? "300px" : "400px")};
   transition: transform 450ms;
   cursor: pointer;
   &:hover {
@@ -91,17 +92,27 @@ export const MovieImage = styled.img.attrs<{ src: string; isLarge?: boolean }>({
   }
 `;
 
-export const MovieMain = styled.img.attrs<{ src: string }>({
-  src: `${(props) => props.src || Imagess}`,
-})`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Text = styled.h1`
+  padding-left: 20px;
+  font-weight: 400;
+  margin-top: 10px;
+`;
+
+export const Header = styled.div<{ backgroundImage: string }>`
+  background-image: ${(props) =>
+    props.backgroundImage ? props.backgroundImage : ""};
+  display: flex;
   width: 100%;
-  margin-right: 15px;
-  object-fit: contain;
-  max-height: 600px;
-  transition: transform 450ms;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.08);
-    z-index: 10;
-  }
+  align-items: center;
+  background-size: cover;
+  background-color: green;
+  margin-top: -50px;
+  z-index: -1;
+  height: 50vh;
+  padding: 20px;
 `;

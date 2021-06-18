@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Rows, MovieImage } from "../styles";
+import { Rows, MovieImage, Container, Text } from "../styles";
 import { Header, MoviesData } from "../types";
 import axios from "axios";
 import dotenv from "dotenv";
@@ -24,8 +24,8 @@ const RowLines: React.FC<Header> = ({ title, fetchURL, isLarge }) => {
 
   return (
     <>
-      <div>
-        <h1>{title}</h1>
+      <Container>
+        <Text>{title}</Text>
         <Rows>
           {movies &&
             movies.map((data) => {
@@ -41,7 +41,7 @@ const RowLines: React.FC<Header> = ({ title, fetchURL, isLarge }) => {
               );
             })}
         </Rows>
-      </div>
+      </Container>
     </>
   );
 };

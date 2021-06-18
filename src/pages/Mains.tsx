@@ -1,10 +1,12 @@
 import React from "react";
 import RowLines from "../components/Rows";
 import requests from "../requests";
+import Banner from "../components/Banner";
 
 export const Mains = () => {
   return (
     <>
+      <Banner fetchURL={requests.fetchTrending} />
       <RowLines
         title="Netflix Originals"
         fetchURL={requests.fetchNetflixOriginals}
