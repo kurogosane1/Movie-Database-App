@@ -6,11 +6,10 @@ import Nav from "../src/components/navbars/Navbar";
 import Banner from "./components/Banner";
 const App = () => {
   return (
-    <>
-   
+    <div style={{ backgroundColor: "#080707", color: "#E5E5E5" }}>
       <Nav />
       <Mains />
-    </>
+    </div>
   );
 };
 

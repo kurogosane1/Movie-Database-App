@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Header } from "../styles/index";
+import {
+  Header,
+  BannerContainer,
+  BannerOverview,
+  BannerButton,
+} from "../styles/index";
 import { BannerInt, MoviesData } from "../types";
 import axios from "axios";
 import dotenv from "dotenv";
 
+dotenv.config();
+
 const Banner: React.FC<BannerInt> = ({ fetchURL }) => {
   const [loading, setLoading] = useState<Boolean>(false);
-  const [movies, setMovies] = useState<MoviesData["Movie"]>();
   const [movie, setMovie] = useState<MoviesData["Movie"]>();
 
   useEffect(() => {
@@ -15,16 +21,35 @@ const Banner: React.FC<BannerInt> = ({ fetchURL }) => {
       const request = await axios.get(
         `${process.env.REACT_APP_URL}${fetchURL}`
       );
-      setMovies(request.data.results);
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      );
       setLoading(false);
       return request;
     }
     GetData();
-  }, [fetchURL]);
+  }, []);
+
+  console.log(movie);
+
+  const reduceLength = (str: string, num: number) => {
+    console.log(str);
+    return str?.length > num ? str.substr(0, num - 1) + ". . ." : str;
+  };
+
   return movie ? (
-    <Header backgroundImage={"something"}>
-      <h1>This is the banner</h1>
-      <h2>This is where things will go</h2>
+    <Header
+      backgroundImage={`${process.env.REACT_APP_IMAGE_EXTENSION}${movie.backdrop_path}`}>
+      <BannerContainer>
+        <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
+        <div>
+          <BannerButton>Play</BannerButton>
+          <BannerButton>Info</BannerButton>
+        </div>
+        <BannerOverview>{reduceLength(movie?.overview, 150)}</BannerOverview>
+      </BannerContainer>
     </Header>
   ) : (
     <h1>Loading</h1>

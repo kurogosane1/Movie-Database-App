@@ -7,7 +7,8 @@ export interface Header {
 
 export interface BannerInt {
   fetchURL: string;
-};
+}
+
 
 export interface MoviesData {
   Movie: {
