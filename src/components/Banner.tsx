@@ -5,7 +5,7 @@ import {
   BannerOverview,
   BannerButton,
 } from "../styles/index";
-import { BannerInt, MoviesData } from "../types";
+import { BannerInt, MovieData } from "../types";
 import axios from "axios";
 import dotenv from "dotenv";
 
@@ -13,7 +13,7 @@ dotenv.config();
 
 const Banner: React.FC<BannerInt> = ({ fetchURL }) => {
   const [loading, setLoading] = useState<Boolean>(false);
-  const [movie, setMovie] = useState<MoviesData["Movie"]>();
+  const [movie, setMovie] = useState<MovieData["Movie"]>();
 
   useEffect(() => {
     setLoading(true);
@@ -32,18 +32,16 @@ const Banner: React.FC<BannerInt> = ({ fetchURL }) => {
     GetData();
   }, []);
 
-  console.log(movie);
-
   const reduceLength = (str: string, num: number) => {
-    console.log(str);
-    return str?.length > num ? str.substr(0, num - 1) + ". . ." : str;
+    console.log(typeof str);
+    return str?.length > num ? str.substr(0, num - 1) + " . . ." : str;
   };
 
   return movie ? (
     <Header
       backgroundImage={`${process.env.REACT_APP_IMAGE_EXTENSION}${movie.backdrop_path}`}>
       <BannerContainer>
-        <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
+        <h1>{movie.title || movie.name || movie.original_name}</h1>
         <div>
           <BannerButton>Play</BannerButton>
           <BannerButton>Info</BannerButton>

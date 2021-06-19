@@ -28,7 +28,7 @@ const RowLines: React.FC<Header> = ({ title, fetchURL, isLarge }) => {
         <Text>{title}</Text>
         <Rows>
           {movies &&
-            movies.map((data) => {
+            movies?.map((data) => {
               return (
                 <MovieImage
                   key={data.id}
@@ -36,7 +36,7 @@ const RowLines: React.FC<Header> = ({ title, fetchURL, isLarge }) => {
                     isLarge ? data.backdrop_path : data.poster_path
                   }`}
                   isLarge={isLarge}
-                  alt={data.orignal_name}
+                  alt={data.title}
                 />
               );
             })}

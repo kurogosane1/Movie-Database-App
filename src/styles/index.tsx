@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Imagess from "../assets/Test.jpg";
+import { Props } from "../types";
 
 export const Button = styled.button`
   width: 80px;
@@ -83,12 +84,12 @@ export const MoviePoster = styled.div`
 `;
 
 export const MovieImage = styled.img.attrs<{ src: string; isLarge?: boolean }>({
-  src: `${(props) => props.src || Imagess}`,
+  src: `${(props: Props) => props.src || Imagess}`,
 })`
   width: 100%;
   margin-right: 15px;
   object-fit: contain;
-  max-height: ${(props) => (props.isLarge ? "15vw" : "25vw")};
+  max-height: ${(props) => (props.isLarge ? "27vw" : "25vw")};
   transition: transform 450ms;
   cursor: pointer;
   &:hover {
@@ -97,6 +98,9 @@ export const MovieImage = styled.img.attrs<{ src: string; isLarge?: boolean }>({
   }
   @media (max-width: 768px) {
     max-height: ${(props) => (props.isLarge ? "30.5vw" : "20.5vw")};
+  }
+  @media (min-width: 1298px) {
+    max-height: ${(props) => (props.isLarge ? "15vw" : "15vw")};
   }
 `;
 
@@ -130,6 +134,9 @@ export const Header = styled.div<{ backgroundImage: string }>`
   }
   @media (min-width: 1298px) {
     height: 60vh;
+    background-position: center;
+
+    object-fit: contain;
   }
 `;
 export const BannerContainer = styled.div`
@@ -162,7 +169,7 @@ export const BannerOverview = styled.h3`
   background-color: transparent;
   line-height: 1.3;
   padding-top: 1rem;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   max-width: 360px;
   height: 80px;
   font-family: "Open Sans", sans-serif;
@@ -190,4 +197,37 @@ export const BannerButton = styled.button`
     background-color: #e6e6e6;
     transition: all 0.2s;
   }
+`;
+
+export const BrowserFoot = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-evenly;
+  background-color: #080707;
+  color: #808080;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+  font-size: 1.1vw;
+`;
+
+export const FootRow = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+`;
+
+export const FootCol = styled.div`
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
+  
+`;
+
+// Front Page for Login Purpose
+export const HomeContainer = styled.div`
+display: flex;
+flex-direction: ;
 `;

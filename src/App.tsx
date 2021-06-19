@@ -1,14 +1,19 @@
-import React from "react";
-// import { Button, UserIcon } from "../src/styles/buttons";
-import NetflixTitle from "../src/assets/icons/NetflixTitle";
 import { Mains } from "../src/pages/Mains";
-import Nav from "../src/components/navbars/Navbar";
-import Banner from "./components/Banner";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import * as ROUTER from "./constants/routes";
+import Home from "./pages/Home";
+
 const App = () => {
   return (
     <div style={{ backgroundColor: "#080707", color: "#E5E5E5" }}>
-      <Nav />
-      <Mains />
+      <Router>
+        <Switch>
+          <Route exact path={ROUTER.HOME} component={Home} />
+        </Switch>
+        <Switch>
+          <Route path={ROUTER.MAIN} component={Mains} />
+        </Switch>
+      </Router>
     </div>
   );
 };

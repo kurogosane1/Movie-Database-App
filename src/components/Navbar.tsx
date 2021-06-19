@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import NetflixTitle from "../../assets/icons/NetflixTitle";
-import { Navbar, NavbarList, UserIcon } from "../../styles/";
+import NetflixTitle from "../assets/icons/NetflixTitle";
+import { Navbar, NavbarList, UserIcon } from "../styles";
 
 function Nav() {
   const [show, handleShow] = useState<Boolean>(false);
@@ -12,7 +12,7 @@ function Nav() {
       } else handleShow(false);
     });
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", () => {});
     };
   }, []);
   return (
