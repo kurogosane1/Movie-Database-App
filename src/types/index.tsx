@@ -14,6 +14,17 @@ export interface Props {
   isLarge?: boolean;
 }
 
+// This is the for te input component
+export interface InputLayer {
+  types: string;
+  Label: string;
+}
+
+export interface InputTextLayer {
+  labelled: string;
+  type?: string;
+}
+
 export interface MovieData {
   Movie: {
     adult?: boolean;

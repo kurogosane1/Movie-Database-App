@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as ROUTER from "./constants/routes";
 import Home from "./pages/Home";
 
+
 const App = () => {
   return (
     <div style={{ backgroundColor: "#080707", color: "#E5E5E5" }}>
@@ -14,6 +15,7 @@ const App = () => {
           <Route path={ROUTER.MAIN} component={Mains} />
         </Switch>
       </Router>
+     
     </div>
   );
 };

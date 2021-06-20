@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Imagess from "../assets/Test.jpg";
-import { Props } from "../types";
+import { Props, InputTextLayer } from "../types";
+import NetFlixFront from "../assets/NetFlixFront.jpeg";
 
 export const Button = styled.button`
   width: 80px;
@@ -76,6 +77,23 @@ export const NavbarList = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+`;
+
+// Front Page Navbar
+export const FrontNavbar = styled.div`
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  background-color: transparent;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 1000;
 `;
 
 export const MoviePoster = styled.div`
@@ -222,12 +240,120 @@ export const FootCol = styled.div`
   padding: 10px;
   flex-direction: column;
   justify-content: space-evenly;
-  
-  
 `;
 
 // Front Page for Login Purpose
-export const HomeContainer = styled.div`
-display: flex;
-flex-direction: ;
+export const HomeContainer = styled.div<{ backgroundImage: string }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url(${(props) => props.backgroundImage});
+  background-color: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  font-family: "Open Sans", sans-serif;
+  background-size: cover;
+  object-fit: contain;
+  height: 100vh;
+`;
+
+// Front Page for Login Container
+export const LoginContainer = styled.div`
+  background-color: #080707ce;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 10px;
+  object-fit: contain;
+  line-height: 2;
+  /* justify-content: space-evenly; */
+  height: 458px;
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  position: relative;
+`;
+
+export const InputTextContainer = styled.input.attrs<{ type: string }>({
+  type: `${(props: InputTextLayer) => props.type}`,
+})`
+  background: white;
+  height: 60px;
+  padding-left: 20px;
+  padding-top: 10px;
+  border-radius: 5px;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  width: 320px;
+  :focus {
+    outline: none;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin: none;
+  }
+  :active {
+    outline: none;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+`;
+
+export const InputPasswordContainer = styled.input.attrs({
+  type: "password",
+})`
+  background: white;
+  height: 60px;
+  padding-left: 20px;
+  padding-top: 10px;
+  border-radius: 5px;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  width: 320px;
+  :focus {
+    outline: none;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin: none;
+  }
+  :active {
+    outline: none;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+`;
+
+export const InputLabel = styled.label.attrs<{ labelled: string }>({
+  value: `${(props: InputTextLayer) => props.labelled}`,
+})`
+  margin-bottom: "10px";
+  position: "absolute";
+  top: "22px";
+  left: "42px";
+  color: "black";
+  font-size: "12px";
+`;
+
+export const InputSubmit = styled.button.attrs({ type: "submit" })`
+  border-radius: 6px;
+  width: 320px;
+  padding: 20px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color: red;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 `;

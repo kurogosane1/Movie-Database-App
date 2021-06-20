@@ -2,7 +2,7 @@ import React from "react";
 import RowLines from "../components/Rows";
 import requests from "../requests";
 import Banner from "../components/Banner";
-import BrowseFooter from "../components/BrowseFooter";
+
 import Nav from "../components/Navbar";
 export const Mains = () => {
   return (
@@ -21,7 +21,6 @@ export const Mains = () => {
       <RowLines title="Horror" fetchURL={requests.fetchHorrorMovies} />
       <RowLines title="Documentaries" fetchURL={requests.fetchDocumentaries} />
       <RowLines title="Romance Movies" fetchURL={requests.fetchRomanceMovies} />
-      <BrowseFooter />
     </>
   );
 };
