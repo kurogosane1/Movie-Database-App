@@ -346,6 +346,7 @@ export const InputLabel = styled.label.attrs<{ labelled: string }>({
 `;
 
 export const InputSubmit = styled.button.attrs({ type: "submit" })`
+  cursor: pointer;
   border-radius: 6px;
   width: 320px;
   padding: 20px;
@@ -356,4 +357,44 @@ export const InputSubmit = styled.button.attrs({ type: "submit" })`
   color: white;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
+  transition: ease 0.2s;
+  &:active {
+    background-color: #930000;
+  }
+`;
+
+export const GoBack = styled.button.attrs({ type: "button" })`
+  cursor: pointer;
+  border-radius: 6px;
+  width: 320px;
+  padding: 20px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color: red;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  transition: ease 0.2s;
+  &:active {
+    background-color: #930000;
+  }
+`;
+
+export const SignupButton = styled.button.attrs({ type: "button" })`
+  cursor: pointer;
+  border-radius: 6px;
+  width: 100px;
+  padding: 8px;
+
+  outline: none;
+  border: none;
+  background-color: red;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  transition: ease 0.2s;
+  &:active {
+    background-color: #930000;
+  }
 `;
