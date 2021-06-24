@@ -5,6 +5,7 @@ import * as ROUTER from "./constants/routes";
 import SignUp from "./pages/SIgnUp";
 import WrongPage from "./pages/WrongPage";
 import Home from "./pages/Home";
+import AuthProvider from "./services/context/Auth";
 
 const App = () => {
   return (
@@ -12,8 +13,10 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path={ROUTER.HOME} component={Home} />
-          <Route exact path={ROUTER.SIGN_IN} component={SignUp} />
-          <Route path={ROUTER.MAIN} component={Mains} />
+          <AuthProvider>
+            <Route exact path={ROUTER.SIGN_IN} component={SignUp} />
+            <Route path={ROUTER.MAIN} component={Mains} />
+          </AuthProvider>
           <Route path={ROUTER.WRONG} component={WrongPage} />
         </Switch>
       </Router>

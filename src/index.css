@@ -4,5 +4,55 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
 
+.inputPassword {
+  background: white;
+  height: 60px;
+  padding-left: 20px;
+  padding-top: 10px;
+  border-radius: 5px;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  width: 320px;
+}
+
+.inputPassword:focus {
+  outline: none;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: none;
+}
+.inputPassword:active {
+  outline: none;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.inputText {
+  background: white;
+  height: 60px;
+  padding-left: 20px;
+  padding-top: 10px;
+  border-radius: 5px;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  width: 320px;
+}
+
+.inputText:focus {
+  outline: none;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: none;
+}
+
+.inputText:active {
+  outline: none;
+  padding-left: 20px;
+  padding-top: 10px;
 }

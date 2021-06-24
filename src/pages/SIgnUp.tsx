@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FrontNav from "../components/FrontNav";
 import {
   HomeContainer,
   LoginContainer,
   InputTextContainer,
   InputSubmit,
+  InputPasswordContainer,
 } from "../styles";
 import Input from "../components/Input";
 import BrowseFooter from "../components/BrowseFooter";
+
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -16,7 +18,14 @@ function SignUp() {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
 
-  const forValidation = () => {};
+  // For signin purpose
+  const loginIn = () => {
+    console.log("This has been pressed");
+    console.log();
+    if (email && password) {
+      console.log("email: " + email + " password: " + password);
+    }
+  };
 
   return (
     <>
@@ -28,6 +37,7 @@ function SignUp() {
             style={{ paddingTop: "20px", textAlign: "left", fontSize: "25px" }}>
             Sign In
           </span>
+
           <div
             style={{
               display: "flex",
@@ -47,8 +57,9 @@ function SignUp() {
               }}>
               Email or Phone Number
             </label>
-            <InputTextContainer
+            <input
               type="email"
+              className="inputText"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -71,13 +82,14 @@ function SignUp() {
               }}>
               Password
             </label>
-            <InputTextContainer
+            <input
               type="password"
+              className="inputPassword"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <InputSubmit onSubmit={forValidation}>Sign In</InputSubmit>
 
+          <InputSubmit onClick={loginIn}>Sign In</InputSubmit>
           <div>
             <p
               style={{
